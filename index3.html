@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.row {
+  display: flex;
+}
+.column {
+  flex: 50%;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+
+<body>
+    <template x-for="pizza in cart.pizzas">
+        <tr>
+            <td><label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required></td>
+            <td x-text="pizza.qty"></td>
+            <td><button x-on:click="remove(pizza)">-</button></td>
+            <td><button x-on:click="add(pizza)">+</button></td>
+            <td x-text="pizza.total.toFixed(2)"></td>
+        </tr>                   
+    </template>
+    
+
+    <div class="imgcontainer">
+      <img src="img_avatar2.png" alt="Logo" class="logo">
+    </div>
+    <div class="imgcontainer">
+       <div class="row">
+        <div class="column">
+<div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+    
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+        <button type="submit">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+    </div>
+  
+    <div class="container" style="background-color:#b20c0c">
+      <span class="psw">Forgot <a href="#">password?</a></span>
+      <span class="psw">Not registered yet?<a href="#"> REGISTER</a></span>
+    </div>
+        </div>
+        
+        <div class="column"></div>
+      </div>
+    </div>
+    
+  
+</body>
